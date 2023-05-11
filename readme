@@ -1,0 +1,43 @@
+Jorge Garcia Serrano - 358133
+
+Descripcion de cada uno de los endpoints de la API
+
+//MOVIES/////////////////
+
+../api/movies 
+    .get {} // arreglo de todas las peliculas en la BD
+    .post {
+        "imdbid": "{imdbid}"
+    }       // crea una nueva pelicula en la BD con resultados de otra API
+
+../api/movies/:id
+    .get {} // busca la pelicula en la BD con tal ID
+    .delete {} // elimina la pelicula en la BD con tal ID
+    .put{
+        "star": Number,
+        "user": String
+    }           // sube a la pelicula una calificacion y actualiza valores de cantidad de votos/ calif global
+
+
+------------------------------------------------------------------------------------------------------
+
+../api/movies/rating/:{imdbid}
+    .get{} //con el parametro del imdbid, regresa el titulo, votos y calificacion total de la pelicula en la BD
+
+------------------------------------------------------------------------------------------------------
+
+
+//USERS/////////////
+
+../api/users
+    .get {} //regresa la lista de usuarios en la BD
+    .post {
+        "username": String
+    }       //agrega a la base de datos un username
+
+../api/users/:id
+    .get {} //obtiene el username con tal ID en la BD
+    .put {
+        "username": String
+    }   //edita el espacio username del registro con tal ID en la BD
+    .delete {} //elimina el registro con tal ID en la BD
